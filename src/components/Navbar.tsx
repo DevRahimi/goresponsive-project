@@ -9,7 +9,7 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 
 const Navbar = () => {
 	return (
-		<div className="flex items-center w-full p-2 min-h-8 border-b-4 md:bg-base-100 md:bg-opacity-70 md:backdrop-blur md:sticky md:top-0 md:z-50">
+		<div className="flex items-center w-full p-2 min-h-8 border-[#f2f2f2] border-b-4 md:border-opacity-70 md:bg-opacity-70 md:backdrop-blur md:sticky md:top-0 md:z-50">
 			<div className="flex-1">
 				<IconButton size="medium" color="primary">
 					<MenuIcon fontSize="inherit" />
