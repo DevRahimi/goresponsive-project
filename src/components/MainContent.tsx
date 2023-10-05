@@ -1,6 +1,9 @@
 import Filter from './Filter';
 import HeaderContent from './HeaderContent';
 import DataCard from './dataSection/DataCard';
+import DataTable from './dataSection/DataTable';
+import Button from '@mui/material/Button';
+import CheckIcon from '@mui/icons-material/Check';
 
 const MainContent = () => {
 	return (
@@ -10,8 +13,8 @@ const MainContent = () => {
 			<Filter />
 			<hr />
 
-			{/* InfoSection */}
-			<div className="border border-red-500 min-h-screen">
+			{/* DataSection */}
+			<div className="flex flex-col justify-center gap-4">
 				<div className="flex items-center justify-between gap-2">
 					<DataCard />
 					<DataCard />
@@ -22,7 +25,14 @@ const MainContent = () => {
 					<DataCard />
 					<DataCard />
 				</div>
-				{/* <InfoTable /> */}
+				<DataTable />
+				<div className="flex items-center justify-center">
+					<Button variant="contained" size="large" disabled>
+						<div className="flex items-center justify-center gap-2 px-4 text-white">
+							SUBMIT <CheckIcon fontSize="medium" />
+						</div>
+					</Button>
+				</div>
 			</div>
 		</main>
 	);
