@@ -1,3 +1,4 @@
+import Filter from './Filter';
 import HeaderContent from './HeaderContent';
 
 const MainContent = () => {
@@ -5,7 +6,7 @@ const MainContent = () => {
 		<main className="min-h-screen py-4 flex flex-col gap-4">
 			<HeaderContent />
 			<hr />
-			{/* <Filter /> */}
+			<Filter />
 			<hr />
 
 			{/* InfoSection */}
