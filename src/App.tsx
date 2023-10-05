@@ -1,3 +1,5 @@
+import Footer from './components/Footer';
+import MainContent from './components/MainContent';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -5,9 +7,9 @@ function App() {
 		<div>
 			<Navbar />
 			<div className="px-6 md:px-12">
-				{/* MainContent */}
+				<MainContent />
 				<hr />
-				{/* Footer */}
+				<Footer />
 			</div>
 		</div>
 	);
