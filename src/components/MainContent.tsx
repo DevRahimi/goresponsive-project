@@ -1,5 +1,6 @@
 import Filter from './Filter';
 import HeaderContent from './HeaderContent';
+import DataCard from './dataSection/DataCard';
 
 const MainContent = () => {
 	return (
@@ -11,7 +12,16 @@ const MainContent = () => {
 
 			{/* InfoSection */}
 			<div className="border border-red-500 min-h-screen">
-				{/* <InfoCards /> */}
+				<div className="flex items-center justify-between gap-2">
+					<DataCard />
+					<DataCard />
+					<DataCard />
+					<DataCard />
+					<DataCard />
+					<DataCard />
+					<DataCard />
+					<DataCard />
+				</div>
 				{/* <InfoTable /> */}
 			</div>
 		</main>
