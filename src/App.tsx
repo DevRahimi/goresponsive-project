@@ -1,7 +1,9 @@
+import Navbar from './components/Navbar';
+
 function App() {
 	return (
 		<div>
-			{/* Navbar */}
+			<Navbar />
 			<div className="px-6 md:px-12">
 				{/* MainContent */}
 				<hr />
