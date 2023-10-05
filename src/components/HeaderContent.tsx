@@ -6,7 +6,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 const HeaderContent = () => {
 	return (
-		<div className="border border-red-500 flex items-center justify-between">
+		<div className="flex items-center justify-between">
 			<Typography variant="h5" fontWeight={500}>
 				Orders and collections
 			</Typography>
