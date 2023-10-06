@@ -106,7 +106,3 @@ The following resources were consulted during the development of this project:
 ## :lock: License
 
 This project is licensed under the [MIT License](LICENSE.md).
-
-```
-
-```
