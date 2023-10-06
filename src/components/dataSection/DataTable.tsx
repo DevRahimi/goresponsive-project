@@ -13,7 +13,7 @@ import DataDeleteButton from './DataDeleteButton';
 import CommentModal from './CommentModal';
 import AddDataModal from './AddDataModal';
 import StatusIconDisplay from './StatusIconDisplay';
-import TableHeaderCols from '../../utils/TableHeaderCols';
+import TableHeaderCols from '../../constants/TableHeaderCols';
 import FlareIcon from '@mui/icons-material/Flare';
 
 interface DataTableProps {

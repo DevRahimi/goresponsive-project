@@ -19,7 +19,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import useAddData from '../../hooks/useAddData';
 import AddDataTextProps, {
 	MenuItemsValues,
-} from '../../utils/AddDataTextProps';
+} from '../../constants/AddDataTextProps';
 
 const style = {
 	position: 'absolute' as 'absolute',
