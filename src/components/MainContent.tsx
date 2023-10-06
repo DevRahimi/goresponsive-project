@@ -15,7 +15,7 @@ const MainContent = () => {
 
 	return (
 		<main className="min-h-screen py-4 flex flex-col gap-4">
-			<LoadingSpinner isLoading={isLoading} />
+			{isLoading && <LoadingSpinner />}
 
 			{!isLoading && (
 				<>
