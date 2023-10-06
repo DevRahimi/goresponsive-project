@@ -15,14 +15,15 @@ const useData = () => {
 		setLoading(true);
 
 		try {
-			const { data: chepData, error } = await supabase
+			let { data: chepData, error } = await supabase
 				.from('mychep_data')
-				.select();
+				.select('*')
+				.order('id', { ascending: true });
 
 			if (error) {
 				throw new Error(error.message);
 			} else {
-				setChepData(chepData);
+				setChepData(chepData as ChepData[]);
 				setLoading(false);
 			}
 		} catch (error: Error | unknown) {
