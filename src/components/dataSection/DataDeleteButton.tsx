@@ -53,8 +53,7 @@ const DataDeleteButton = ({ dataId }: DataDeleteButtonProps) => {
 						Confirm delete
 					</Typography>
 					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						If you are sure you'd like to delete this entry, click the button
-						below.
+						Please confirm that you want to delete this row.
 					</Typography>
 					<Button
 						variant="contained"

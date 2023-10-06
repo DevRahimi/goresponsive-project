@@ -7,24 +7,14 @@ import Table from '@mui/material/Table';
 import TableHead from '@mui/material/TableHead';
 import TableBody from '@mui/material/TableBody';
 import { Tooltip } from '@mui/material';
-import LayersIcon from '@mui/icons-material/Layers';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LabelIcon from '@mui/icons-material/Label';
-import NumbersIcon from '@mui/icons-material/Numbers';
-import FlareIcon from '@mui/icons-material/Flare';
-import PieChartIcon from '@mui/icons-material/PieChart';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import HomeWorkIcon from '@mui/icons-material/HomeWork';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import InsertCommentIcon from '@mui/icons-material/InsertComment';
-import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import Box from '@mui/material/Box';
 import { ChepData } from '../../types/all.types';
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import DataDeleteButton from './DataDeleteButton';
 import CommentModal from './CommentModal';
 import AddDataModal from './AddDataModal';
 import StatusIconDisplay from './StatusIconDisplay';
+import TableHeaderCols from '../../utils/TableHeaderCols';
+import FlareIcon from '@mui/icons-material/Flare';
 
 interface DataTableProps {
 	dataRows: ChepData[];
@@ -67,64 +57,13 @@ const DataTable = ({ dataRows }: DataTableProps) => {
 					<Table stickyHeader>
 						<TableHead>
 							<TableRow>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Equipment Type">
-										<LayersIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Quantity">
-										<BarChartIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Order Number">
-										<LabelIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Delivery Number">
-										<NumbersIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Flare?">
-										<FlareIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Percentage">
-										<PieChartIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Delivery Method">
-										<LocalShippingIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Warehouse?">
-										<HomeWorkIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Delivery Time">
-										<AccessTimeIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Delivery Notes">
-										<InsertCommentIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="Status">
-										<LabelImportantIcon />
-									</Tooltip>
-								</StyledTableCell>
-								<StyledTableCell align="center">
-									<DeleteForeverOutlinedIcon sx={{ color: '#478ac3' }} />
-								</StyledTableCell>
+								{TableHeaderCols.map((col, index) => (
+									<StyledTableCell align="center" key={index}>
+										<Tooltip arrow placement="top" title={col.tooltipTitle}>
+											{col.icon}
+										</Tooltip>
+									</StyledTableCell>
+								))}
 							</TableRow>
 						</TableHead>
 						<TableBody>

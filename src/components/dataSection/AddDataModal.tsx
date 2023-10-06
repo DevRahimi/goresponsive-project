@@ -17,6 +17,9 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import SaveIcon from '@mui/icons-material/Save';
 import useAddData from '../../hooks/useAddData';
+import AddDataTextProps, {
+	MenuItemsValues,
+} from '../../utils/AddDataTextProps';
 
 const style = {
 	position: 'absolute' as 'absolute',
@@ -85,90 +88,19 @@ const AddDataModal = () => {
 						New Data Entry
 					</Typography>
 					<div className="flex flex-col gap-4 pt-4">
-						<TextField
-							required
-							type="text"
-							label="Equipment Type"
-							name="equipment_type"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<TextField
-							required
-							type="number"
-							inputProps={{ min: 1 }}
-							label="Volume"
-							name="volume"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<TextField
-							required
-							type="text"
-							label="Order Number"
-							name="order_number"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<TextField
-							required
-							type="number"
-							label="Delivery Number"
-							name="delivery_number"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<FormControlLabel
-							control={<Checkbox />}
-							label="Flare?"
-							name="flare"
-							onChange={(
-								_event: React.SyntheticEvent,
-								_checked: boolean
-							): void => setFormData({ ...formData, flare: !formData.flare })}
-						/>
-						<TextField
-							required
-							type="number"
-							inputProps={{ min: 0, max: 100 }}
-							label="Pie (percentage) enter as a number"
-							name="pie"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<TextField
-							required
-							type="text"
-							label="Delivery"
-							name="delivery"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<TextField
-							required
-							type="text"
-							label="Warehouse"
-							name="warehouse"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<TextField
-							required
-							type="text"
-							label="Delivery Comments"
-							name="comment"
-							variant="outlined"
-							fullWidth
-							onChange={handleInputChange}
-						/>
-						<FormControl fullWidth>
+						{AddDataTextProps.map((props, index) => (
+							<TextField
+								key={index}
+								required
+								type="text"
+								label={props.labelProp}
+								name={props.nameProp}
+								variant="outlined"
+								fullWidth
+								onChange={handleInputChange}
+							/>
+						))}
+						<FormControl fullWidth required>
 							<InputLabel>Status</InputLabel>
 							<Select
 								value={formData.status}
@@ -181,15 +113,22 @@ const AddDataModal = () => {
 									});
 								}}
 							>
-								<MenuItem value={'Requested'}>Requested</MenuItem>
-								<MenuItem value={'Planned'}>Planned</MenuItem>
-								<MenuItem value={'Shipped'}>Shipped</MenuItem>
-								<MenuItem value={'Pending'}>Pending</MenuItem>
-								<MenuItem value={'Completed'}>Completed</MenuItem>
-								<MenuItem value={'Cancelled'}>Cancelled</MenuItem>
-								<MenuItem value={'Unsuccessful'}>Unsuccessful</MenuItem>
+								{MenuItemsValues.map((value, index) => (
+									<MenuItem key={index} value={value}>
+										{value}
+									</MenuItem>
+								))}
 							</Select>
 						</FormControl>
+						<FormControlLabel
+							control={<Checkbox />}
+							label="Flare?"
+							name="flare"
+							onChange={(
+								_event: React.SyntheticEvent,
+								_checked: boolean
+							): void => setFormData({ ...formData, flare: !formData.flare })}
+						/>
 					</div>
 					<Box className="flex items-center justify-between gap-2 mt-4">
 						<Button

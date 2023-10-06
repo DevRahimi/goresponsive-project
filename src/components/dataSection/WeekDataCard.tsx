@@ -5,6 +5,14 @@ import FlareIcon from '@mui/icons-material/Flare';
 import BarChartIcon from '@mui/icons-material/BarChart';
 
 const WeekDataCard = () => {
+	const boxCss = {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'end',
+		gap: 1,
+		paddingY: 0.5,
+	};
+
 	return (
 		<div className="flex-1 min-w-fit border border-[#f2f2f2] rounded-md p-2 flex flex-col gap-1 text-end hover:cursor-pointer hover:shadow-md">
 			<Typography variant="body1" fontWeight={500} paddingRight={1}>
@@ -13,11 +21,7 @@ const WeekDataCard = () => {
 			<Divider />
 			<Box
 				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'end',
-					gap: 1,
-					paddingY: 0.5,
+					...boxCss,
 					fontSize: '10px',
 				}}
 				paddingRight={1}
@@ -28,11 +32,7 @@ const WeekDataCard = () => {
 			<Divider />
 			<Box
 				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'end',
-					gap: 1,
-					paddingY: 0.5,
+					...boxCss,
 					fontSize: '12px',
 				}}
 				paddingRight={1}
@@ -42,11 +42,7 @@ const WeekDataCard = () => {
 			</Box>
 			<Box
 				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'end',
-					gap: 1,
-					paddingY: 0.5,
+					...boxCss,
 					fontSize: '12px',
 				}}
 				paddingRight={1}
@@ -57,11 +53,7 @@ const WeekDataCard = () => {
 			<Divider />
 			<Box
 				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'end',
-					gap: 1,
-					paddingY: 0.5,
+					...boxCss,
 					fontSize: '14px',
 				}}
 				paddingRight={1}
