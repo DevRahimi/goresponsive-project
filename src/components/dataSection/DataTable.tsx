@@ -1,11 +1,11 @@
 import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import TableContainer from '@mui/material/TableContainer';
+import Table from '@mui/material/Table';
+import TableHead from '@mui/material/TableHead';
+import TableBody from '@mui/material/TableBody';
 import { Tooltip } from '@mui/material';
 import LayersIcon from '@mui/icons-material/Layers';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -27,14 +27,20 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 		backgroundColor: theme.palette.primary.main,
 		color: theme.palette.common.white,
 	},
+	[`&.${tableCellClasses.head}:nth-child(even)`]: {
+		backgroundColor: '#478ac3',
+	},
 	[`&.${tableCellClasses.body}`]: {
 		fontSize: 14,
 	},
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-	'&:nth-of-type(odd)': {
-		backgroundColor: theme.palette.action.hover,
+	'& td:nth-child(odd)': {
+		backgroundColor: theme.palette.neutral.main,
+	},
+	'& td:nth-child(even)': {
+		backgroundColor: theme.palette.neutral.light,
 	},
 	// hide last border
 	'&:last-child td, &:last-child th': {
@@ -51,7 +57,6 @@ function createData(
 	pie: number,
 	delivery: string,
 	warehouse: string,
-	time: string,
 	comment: string,
 	status: string
 ) {
@@ -64,7 +69,6 @@ function createData(
 		pie,
 		delivery,
 		warehouse,
-		time,
 		comment,
 		status,
 	};
@@ -80,7 +84,6 @@ const rows = [
 		50,
 		'CHEP',
 		'CHEP',
-		'8am - 3pm',
 		'Leave at door.',
 		'pending'
 	),
@@ -93,7 +96,6 @@ const rows = [
 		50,
 		'CHEP',
 		'CHEP',
-		'8am - 3pm',
 		'Leave at door.',
 		'pending'
 	),
@@ -106,7 +108,6 @@ const rows = [
 		50,
 		'CHEP',
 		'CHEP',
-		'8am - 3pm',
 		'Leave at door.',
 		'pending'
 	),
@@ -119,7 +120,6 @@ const rows = [
 	// 	50,
 	// 	'CHEP',
 	// 	'CHEP',
-	// 	'8am - 3pm',
 	// 	'Leave at door.',
 	// 	'pending'
 	// ),
@@ -132,7 +132,6 @@ const rows = [
 	// 	50,
 	// 	'CHEP',
 	// 	'CHEP',
-	// 	'8am - 3pm',
 	// 	'Leave at door.',
 	// 	'pending'
 	// ),
@@ -145,7 +144,6 @@ const rows = [
 	// 	50,
 	// 	'CHEP',
 	// 	'CHEP',
-	// 	'8am - 3pm',
 	// 	'Leave at door.',
 	// 	'pending'
 	// ),
@@ -158,7 +156,6 @@ const rows = [
 	// 	50,
 	// 	'CHEP',
 	// 	'CHEP',
-	// 	'8am - 3pm',
 	// 	'Leave at door.',
 	// 	'pending'
 	// ),
@@ -235,9 +232,7 @@ const DataTable = () => {
 						<TableBody>
 							{rows.map(row => (
 								<StyledTableRow key={row.orderNumber}>
-									<StyledTableCell align="center" component="th" scope="row">
-										{row.type}
-									</StyledTableCell>
+									<StyledTableCell align="center">{row.type}</StyledTableCell>
 									<StyledTableCell align="center">
 										{row.volume}
 									</StyledTableCell>
@@ -257,7 +252,7 @@ const DataTable = () => {
 									<StyledTableCell align="center">
 										{row.warehouse}
 									</StyledTableCell>
-									<StyledTableCell align="center">{row.time}</StyledTableCell>
+									<StyledTableCell align="center">8am - 3pm</StyledTableCell>
 									<StyledTableCell align="center">
 										{row.comment}
 									</StyledTableCell>
