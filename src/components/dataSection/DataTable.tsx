@@ -173,57 +173,57 @@ const DataTable = () => {
 						<TableHead>
 							<TableRow>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Equipment Type">
 										<LayersIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Quantity">
 										<BarChartIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Order Number">
 										<LabelIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Delivery Number">
 										<NumbersIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Flare?">
 										<FlareIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Percentage">
 										<PieChartIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Delivery Method">
 										<LocalShippingIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Warehouse?">
 										<HomeWorkIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Delivery Time">
 										<AccessTimeIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Delivery Notes">
 										<InsertCommentIcon />
 									</Tooltip>
 								</StyledTableCell>
 								<StyledTableCell align="center">
-									<Tooltip arrow placement="top" title="testing">
+									<Tooltip arrow placement="top" title="Status">
 										<LabelImportantIcon />
 									</Tooltip>
 								</StyledTableCell>
