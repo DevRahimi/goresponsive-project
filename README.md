@@ -1,27 +1,76 @@
-# React + TypeScript + Vite
+# Responsive Digital Technical Assessment Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/DevRahimi/goresponsive-project)
+![GitHub language count](https://img.shields.io/github/languages/count/DevRahimi/goresponsive-project)
 
-Currently, two official plugins are available:
+## Index
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [About](#green_book-about)
+- [Usage](#zap-usage)
+  - [Installation](#electric_plug-installation)
+  - [Commands](#package-commands)
+- [Development](#development)
+  - [Tech-Stack](#tech-stack)
+  - [Build](#build)
+- [Resources](#resources)
+- [Credit/Acknowledgment](#star2-creditacknowledgment)
+- [License](#lock-license)
 
-## Expanding the ESLint configuration
+## :green_book: About
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This single page React app is a order manager for a store. It allows the user to view, add, edit, and delete orders (CRUD using [Supabase](https://supabase.com)). The user can also filter orders by 'orders' or 'collections'.
 
-- Configure the top-level `parserOptions` property like this:
+## :zap: Usage
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### :electric_plug: Installation
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clone the repository to an empty directory on your local machine. `https://github.com/DevRahimi/goresponsive-project.git`
+2. Run `bun install` or `npm install` to install the dependencies.
+
+### :package: Commands
+
+This project can be viewed through a few methods:
+
+- Method 1: Run `bun run dev` or `npm run dev` to start a development server and run the app locally.
+
+<!-- TODO: add link -->
+
+- Method 2: This project is hosted on Vercel. You can view it [here]() as well.
+
+## Development
+
+### Tech-Stack
+
+A list of all the technologies used in this project.
+
+- `Git`
+- `Node.js`
+- `Bun.sh` (`npm` works too!)
+- `Reactjs`
+- `Supabase`
+- `TailwindCSS`
+- `Material UI`
+- `Emotion`
+- `Vercel`
+
+### Build
+
+Run `bun build` or `npm run build` to build the project for production.
+
+## Resources
+
+The following resources were consulted during the development of this project:
+
+- [Bun.sh](https://bun.sh/docs)
+- [Material UI](https://mui.com/material-ui)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Supabase](https://supabase.com/docs)
+
+## :star2: Credit/Acknowledgment
+
+- [DevRahimi](https://devrahimi.vercel.app)
+
+## :lock: License
+
+This project is licensed under the [MIT License](LICENSE.md).
