@@ -19,10 +19,12 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import AddBoxIcon from '@mui/icons-material/AddBox';
 import { ChepData } from '../../types/all.types';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import DataDeleteButton from './DataDeleteButton';
+import CommentModal from './CommentModal';
+import AddDataModal from './AddDataModal';
+import StatusIconDisplay from './StatusIconDisplay';
 
 interface DataTableProps {
 	dataRows: ChepData[];
@@ -120,7 +122,9 @@ const DataTable = ({ dataRows }: DataTableProps) => {
 										<LabelImportantIcon />
 									</Tooltip>
 								</StyledTableCell>
-								<StyledTableCell align="center"></StyledTableCell>
+								<StyledTableCell align="center">
+									<DeleteForeverOutlinedIcon sx={{ color: '#478ac3' }} />
+								</StyledTableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
@@ -152,10 +156,14 @@ const DataTable = ({ dataRows }: DataTableProps) => {
 									</StyledTableCell>
 									<StyledTableCell align="center">8am - 3pm</StyledTableCell>
 									<StyledTableCell align="center">
-										<InsertCommentIcon color="primary" />
+										<CommentModal
+											dataId={row.id}
+											comment={row.comment}
+											orderId={row.order_number}
+										/>
 									</StyledTableCell>
 									<StyledTableCell align="center">
-										{row.status}
+										<StatusIconDisplay status={row.status.toLowerCase()} />
 									</StyledTableCell>
 									<StyledTableCell align="center">
 										{row.status.toLowerCase() === 'completed' && (
@@ -180,11 +188,7 @@ const DataTable = ({ dataRows }: DataTableProps) => {
 							justifyContent: 'center',
 						}}
 					>
-						<Button sx={{ width: '100%' }}>
-							<div className="flex items-center justify-center gap-2 px-4">
-								ADD <AddBoxIcon fontSize="medium" />
-							</div>
-						</Button>
+						<AddDataModal />
 					</Box>
 				</div>
 			</Paper>
@@ -193,5 +197,3 @@ const DataTable = ({ dataRows }: DataTableProps) => {
 };
 
 export default DataTable;
-
-// sx={{ backgroundColor: 'white', width: '100%', bottom: 0, position: 'sticky' }}
