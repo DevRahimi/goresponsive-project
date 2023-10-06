@@ -40,7 +40,7 @@ const DataDeleteButton = ({ dataId }: DataDeleteButtonProps) => {
 	return (
 		<div>
 			<Button onClick={handleOpen}>
-				<DeleteForeverOutlinedIcon color="error" />
+				<DeleteForeverOutlinedIcon color="primary" />
 			</Button>
 			<Modal
 				open={open}
