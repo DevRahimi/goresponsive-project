@@ -1,4 +1,3 @@
-import Filter from './Filter';
 import HeaderContent from './HeaderContent';
 import DataCard from './dataSection/DataCard';
 import WeekDataCard from './dataSection/WeekDataCard';
@@ -8,12 +7,28 @@ import CheckIcon from '@mui/icons-material/Check';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorAlert from './ErrorAlert';
 import useData from '../hooks/useData';
+import { useState } from 'react';
+import Filter from './Filter';
 
 const MainContent = () => {
 	const { chepData, error, isLoading } = useData();
+	const [orders, setOrders] = useState(true);
 
-	// const error = 'ERRORTEXT ERRORTEXT ERRORTEXT';
-	// const isLoading = false;
+	const filteredChepData = chepData.filter(data => {
+		if (orders) {
+			return true;
+		} else {
+			return data.warehouse.toLowerCase().includes('chep');
+		}
+	});
+
+	const handleOrdersClick = () => {
+		if (orders) {
+			setOrders(false);
+		} else {
+			setOrders(true);
+		}
+	};
 
 	if (error) {
 		return (
@@ -33,7 +48,25 @@ const MainContent = () => {
 				<>
 					<HeaderContent />
 					<hr />
-					<Filter />
+					<div className="flex items-center justify-between">
+						<div className="bg-[#f2f2f2] rounded-md p-2">
+							<Button
+								variant={`${orders ? 'contained' : 'text'}`}
+								size="medium"
+								onClick={handleOrdersClick}
+							>
+								ORDERS
+							</Button>
+							<Button
+								variant={`${!orders ? 'contained' : 'text'}`}
+								size="medium"
+								onClick={handleOrdersClick}
+							>
+								COLLECTIONS
+							</Button>
+						</div>
+						<Filter />
+					</div>
 					<hr />
 
 					{/* DataSection */}
@@ -45,10 +78,9 @@ const MainContent = () => {
 							<DataCard />
 							<DataCard />
 							<DataCard />
-							<DataCard />
 							<WeekDataCard />
 						</div>
-						<DataTable />
+						<DataTable dataRows={filteredChepData} />
 						<div className="flex items-center justify-center">
 							<Button variant="contained" size="large" disabled>
 								<div className="flex items-center justify-center gap-2 px-4 text-white">
