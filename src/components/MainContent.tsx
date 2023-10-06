@@ -11,13 +11,11 @@ import LoadingSpinner from './LoadingSpinner';
 const MainContent = () => {
 	// const { chepData, error, isLoading } = useData();
 
-	const isLoading = true;
+	const isLoading = false;
 
 	return (
 		<main className="min-h-screen py-4 flex flex-col gap-4">
-			<div className="pt-12">
-				<LoadingSpinner isLoading={isLoading} />
-			</div>
+			<LoadingSpinner isLoading={isLoading} />
 
 			{!isLoading && (
 				<>

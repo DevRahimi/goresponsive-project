@@ -8,7 +8,7 @@ const LoadingSpinner = ({ isLoading }: LoadingSpinnerProps) => {
 	return (
 		<>
 			{isLoading && (
-				<div className="flex justify-center">
+				<div className="flex justify-center pt-12">
 					<Box sx={{ display: 'flex' }}>
 						<CircularProgress />
 					</Box>
