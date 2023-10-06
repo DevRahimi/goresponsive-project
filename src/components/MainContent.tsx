@@ -6,12 +6,24 @@ import DataTable from './dataSection/DataTable';
 import Button from '@mui/material/Button';
 import CheckIcon from '@mui/icons-material/Check';
 import LoadingSpinner from './LoadingSpinner';
-// import useData from '../hooks/useData';
+import ErrorAlert from './ErrorAlert';
+import useData from '../hooks/useData';
 
 const MainContent = () => {
-	// const { chepData, error, isLoading } = useData();
+	const { chepData, error, isLoading } = useData();
 
-	const isLoading = false;
+	// const error = 'ERRORTEXT ERRORTEXT ERRORTEXT';
+	// const isLoading = false;
+
+	if (error) {
+		return (
+			<main className="min-h-screen py-4 flex justify-center pt-12">
+				<div>
+					<ErrorAlert error={error} />
+				</div>
+			</main>
+		);
+	}
 
 	return (
 		<main className="min-h-screen py-4 flex flex-col gap-4">
@@ -23,6 +35,7 @@ const MainContent = () => {
 					<hr />
 					<Filter />
 					<hr />
+
 					{/* DataSection */}
 					<div className="flex flex-col justify-center gap-4">
 						<div className="flex items-center justify-between gap-2">
