@@ -3,10 +3,12 @@ import { PaletteColor, PaletteColorOptions, createTheme } from '@mui/material';
 declare module '@mui/material/styles' {
 	interface Palette {
 		neutral: PaletteColor;
+		unsuccessful: PaletteColor;
 	}
 
 	interface PaletteOptions {
 		neutral: PaletteColorOptions;
+		unsuccessful: PaletteColorOptions;
 	}
 }
 
@@ -53,6 +55,12 @@ let theme = createTheme({
 			light: '#fff',
 			dark: '#d9d9d9',
 			contrastText: '#000',
+		},
+		unsuccessful: {
+			main: '#813fdf',
+			light: '#b47cff',
+			dark: '#4b00b7',
+			contrastText: '#fff',
 		},
 	},
 });
