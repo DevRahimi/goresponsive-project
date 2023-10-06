@@ -1,6 +1,7 @@
 import Filter from './Filter';
 import HeaderContent from './HeaderContent';
 import DataCard from './dataSection/DataCard';
+import WeekDataCard from './dataSection/WeekDataCard';
 import DataTable from './dataSection/DataTable';
 import Button from '@mui/material/Button';
 import CheckIcon from '@mui/icons-material/Check';
@@ -23,7 +24,7 @@ const MainContent = () => {
 					<DataCard />
 					<DataCard />
 					<DataCard />
-					<DataCard />
+					<WeekDataCard />
 				</div>
 				<DataTable />
 				<div className="flex items-center justify-center">
