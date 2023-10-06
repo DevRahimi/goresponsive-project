@@ -30,6 +30,7 @@ const DataDeleteButton = ({ dataId }: DataDeleteButtonProps) => {
 
 	const handleDeleteData = () => {
 		setDeleting(true);
+		// TODO: add error handling
 		useDeleteDataById(dataId);
 		setDeleting(false);
 		handleClose();
