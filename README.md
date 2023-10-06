@@ -34,6 +34,10 @@ This project can be viewed through a few methods:
 
 - Method 1: Run `bun run dev` or `npm run dev` to start a development server and run the app locally.
 
+```
+NOTE: In order to use `npm run dev`, open `package.json` and change the `scripts dev` line from `bunx vite` to `vite`.
+```
+
 <!-- TODO: add link -->
 
 - Method 2: This project is hosted on Vercel. You can view it [here]() as well.
