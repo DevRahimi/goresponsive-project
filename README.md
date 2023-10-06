@@ -27,6 +27,34 @@ This single page React app is a order manager for a store. It allows the user to
 
 1. Clone the repository to an empty directory on your local machine. `https://github.com/DevRahimi/goresponsive-project.git`
 2. Run `bun install` or `npm install` to install the dependencies.
+3. On [Supabase](https://supabase.com), create a new project and add a table called `mychep_data` with the following SQL query:
+
+```
+create table
+  mychep_data (
+    equipment_type text,
+    volume numeric(10, 2),
+    order_number text,
+    delivery_number text,
+    flare boolean,
+    pie numeric(10, 2),
+    delivery text,
+    warehouse text,
+    comment text,
+    status text,
+    created_at TIMESTAMPTZ default now()
+  );
+```
+
+4. Follow the instructions on the Supabase Dashboard to enable Row Level Security (RLS) for the `mychep_data` table and allow the public role to have `all` permissions.
+
+5. Create a `.env` file in the root directory and add the following environment variables:
+
+```
+VITE_SUPABASE_URL=<your supabase url>
+VITE_SUPABASE_KEY=<your supabase key>
+
+```
 
 ### :package: Commands
 
@@ -35,12 +63,12 @@ This project can be viewed through a few methods:
 - Method 1: Run `bun run dev` or `npm run dev` to start a development server and run the app locally.
 
 ```
-NOTE: In order to use `npm run dev`, open `package.json` and change the `scripts dev` line from `bunx vite` to `vite`.
+
+NOTE: In order to run the app locally using `npm run dev`, open `package.json` and change the `scripts dev` line from `bunx vite` to `vite`.
+
 ```
 
-<!-- TODO: add link -->
-
-- Method 2: This project is hosted on Vercel. You can view it [here]() as well.
+- Method 2: This project is hosted on Vercel. You can view it [here](https://goresponsive-mockup.vercel.app) as well.
 
 ## :hammer_and_wrench: Development
 
@@ -78,3 +106,7 @@ The following resources were consulted during the development of this project:
 ## :lock: License
 
 This project is licensed under the [MIT License](LICENSE.md).
+
+```
+
+```
