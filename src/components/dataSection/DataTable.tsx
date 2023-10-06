@@ -105,7 +105,7 @@ const DataTable = ({ dataRows }: DataTableProps) => {
 										<StatusIconDisplay status={row.status.toLowerCase()} />
 									</StyledTableCell>
 									<StyledTableCell align="center">
-										{row.status.toLowerCase() === 'completed' && (
+										{row.status.toLowerCase() === 'requested' && (
 											<DataDeleteButton dataId={row.id} />
 										)}
 									</StyledTableCell>

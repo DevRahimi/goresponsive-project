@@ -6,13 +6,13 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 const HeaderContent = () => {
 	return (
-		<div className="flex items-center justify-between">
+		<div className="flex max-md:flex-col max-md:gap-4 max-md:items-start items-center justify-between">
 			<Typography variant="h5" fontWeight={500}>
 				Orders and collections
 			</Typography>
 
 			{/* BUTTONS */}
-			<div className="flex items-center gap-4">
+			<div className="flex max-md:flex-col max-md:gap-4 max-md:items-start items-center gap-4">
 				<Button variant="contained" size="medium" color="secondary">
 					<div className="flex items-center justify-between gap-4">
 						<SvgIcon
@@ -32,10 +32,10 @@ const HeaderContent = () => {
 					</div>
 				</Button>
 				<Button
-					className="flex-1 flex-col"
+					className="flex flex-col"
 					variant="contained"
 					size="medium"
-					color="neutral"
+					sx={{ backgroundColor: '#f2f2f2', color: '#000' }}
 				>
 					<div className="flex items-center justify-between gap-4">
 						<SvgIcon
