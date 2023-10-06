@@ -15,7 +15,7 @@ const StatusIconDisplay = ({ status }: StatusIconDisplayProps) => {
 		<>
 			{status === 'requested' && <TaskIcon fontSize="small" color="primary" />}
 			{status === 'planned' && (
-				<DescriptionIcon fontSize="small" sx={{ color: '#f2f2f2' }} />
+				<DescriptionIcon fontSize="small" sx={{ color: '#adadad' }} />
 			)}
 			{status === 'shipped' && (
 				<ForwardIcon fontSize="small" color="secondary" />
