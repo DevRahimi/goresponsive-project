@@ -21,13 +21,19 @@ import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { ChepData } from '../../types/all.types';
+import DataDeleteButton from './DataDeleteButton';
+
+interface DataTableProps {
+	dataRows: ChepData[];
+}
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	[`&.${tableCellClasses.head}`]: {
 		backgroundColor: theme.palette.primary.main,
 		color: theme.palette.common.white,
 	},
-	[`&.${tableCellClasses.head}:nth-child(even)`]: {
+	[`&.${tableCellClasses.head}:nth-of-type(even)`]: {
 		backgroundColor: '#478ac3',
 	},
 	[`&.${tableCellClasses.body}`]: {
@@ -36,10 +42,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-	'& td:nth-child(odd)': {
+	'& td:nth-of-type(odd)': {
 		backgroundColor: theme.palette.neutral.main,
 	},
-	'& td:nth-child(even)': {
+	'& td:nth-of-type(even)': {
 		backgroundColor: theme.palette.neutral.light,
 	},
 	// hide last border
@@ -48,120 +54,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 	},
 }));
 
-function createData(
-	type: string,
-	volume: number,
-	tag: string,
-	orderNumber: number,
-	flare: boolean,
-	pie: number,
-	delivery: string,
-	warehouse: string,
-	comment: string,
-	status: string
-) {
-	return {
-		type,
-		volume,
-		tag,
-		orderNumber,
-		flare,
-		pie,
-		delivery,
-		warehouse,
-		comment,
-		status,
-	};
-}
-
-const rows = [
-	createData(
-		'1 B1210A',
-		320,
-		'305487521333',
-		8931343406,
-		false,
-		50,
-		'CHEP',
-		'CHEP',
-		'Leave at door.',
-		'pending'
-	),
-	createData(
-		'1 B1210A',
-		320,
-		'305487521333',
-		8931343406,
-		false,
-		50,
-		'CHEP',
-		'CHEP',
-		'Leave at door.',
-		'pending'
-	),
-	createData(
-		'1 B1210A',
-		320,
-		'305487521333',
-		8931343406,
-		true,
-		50,
-		'CHEP',
-		'CHEP',
-		'Leave at door.',
-		'pending'
-	),
-	// createData(
-	// 	'1 B1210A',
-	// 	320,
-	// 	'305487521333',
-	// 	8931343406,
-	// 	false,
-	// 	50,
-	// 	'CHEP',
-	// 	'CHEP',
-	// 	'Leave at door.',
-	// 	'pending'
-	// ),
-	// createData(
-	// 	'1 B1210A',
-	// 	320,
-	// 	'305487521333',
-	// 	8931343406,
-	// 	true,
-	// 	50,
-	// 	'CHEP',
-	// 	'CHEP',
-	// 	'Leave at door.',
-	// 	'pending'
-	// ),
-	// createData(
-	// 	'1 B1210A',
-	// 	320,
-	// 	'305487521333',
-	// 	8931343406,
-	// 	true,
-	// 	50,
-	// 	'CHEP',
-	// 	'CHEP',
-	// 	'Leave at door.',
-	// 	'pending'
-	// ),
-	// createData(
-	// 	'1 B1210A',
-	// 	320,
-	// 	'305487521333',
-	// 	8931343406,
-	// 	false,
-	// 	50,
-	// 	'CHEP',
-	// 	'CHEP',
-	// 	'Leave at door.',
-	// 	'pending'
-	// ),
-];
-
-const DataTable = () => {
+const DataTable = ({ dataRows }: DataTableProps) => {
 	return (
 		<div className="flex flex-col items-center justify-center gap-2">
 			<Paper
@@ -227,18 +120,23 @@ const DataTable = () => {
 										<LabelImportantIcon />
 									</Tooltip>
 								</StyledTableCell>
+								<StyledTableCell align="center"></StyledTableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
-							{rows.map(row => (
-								<StyledTableRow key={row.orderNumber}>
-									<StyledTableCell align="center">{row.type}</StyledTableCell>
+							{dataRows.map(row => (
+								<StyledTableRow key={row.id}>
 									<StyledTableCell align="center">
-										{row.volume}
+										<strong>{row.equipment_type}</strong>
 									</StyledTableCell>
-									<StyledTableCell align="center">{row.tag}</StyledTableCell>
 									<StyledTableCell align="center">
-										{row.orderNumber}
+										<strong>{row.volume.toString()}</strong>
+									</StyledTableCell>
+									<StyledTableCell align="center">
+										{row.order_number}
+									</StyledTableCell>
+									<StyledTableCell align="center">
+										{row.delivery_number}
 									</StyledTableCell>
 									<StyledTableCell align="center">
 										{row.flare ? <FlareIcon color="primary" /> : ''}
@@ -254,10 +152,15 @@ const DataTable = () => {
 									</StyledTableCell>
 									<StyledTableCell align="center">8am - 3pm</StyledTableCell>
 									<StyledTableCell align="center">
-										{row.comment}
+										<InsertCommentIcon color="primary" />
 									</StyledTableCell>
 									<StyledTableCell align="center">
 										{row.status}
+									</StyledTableCell>
+									<StyledTableCell align="center">
+										{row.status.toLowerCase() === 'completed' && (
+											<DataDeleteButton dataId={row.id} />
+										)}
 									</StyledTableCell>
 								</StyledTableRow>
 							))}
