@@ -3,7 +3,7 @@ export interface ChepData {
 	equipment_type: string;
 	volume: number;
 	order_number: string;
-	deliver_number: number;
+	delivery_number: number;
 	flare: boolean;
 	pie: number;
 	delivery: string;
