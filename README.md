@@ -10,10 +10,10 @@
 - [Usage](#zap-usage)
   - [Installation](#electric_plug-installation)
   - [Commands](#package-commands)
-- [Development](#development)
-  - [Tech-Stack](#tech-stack)
-  - [Build](#build)
-- [Resources](#resources)
+- [Development](#hammer_and_wrench-development)
+  - [Tech-Stack](#computer-tech-stack)
+  - [Build](#building_construction-build)
+- [Resources](#open_book-resources)
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
 - [License](#lock-license)
 
@@ -38,9 +38,9 @@ This project can be viewed through a few methods:
 
 - Method 2: This project is hosted on Vercel. You can view it [here]() as well.
 
-## Development
+## :hammer_and_wrench: Development
 
-### Tech-Stack
+### :computer: Tech-Stack
 
 A list of all the technologies used in this project.
 
@@ -54,11 +54,11 @@ A list of all the technologies used in this project.
 - `Emotion`
 - `Vercel`
 
-### Build
+### :building_construction: Build
 
 Run `bun build` or `npm run build` to build the project for production.
 
-## Resources
+## :open_book: Resources
 
 The following resources were consulted during the development of this project:
 
